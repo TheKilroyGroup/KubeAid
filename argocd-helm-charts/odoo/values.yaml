@@ -1,4 +1,7 @@
 ---
+global:
+  security:
+    allowInsecureImages: true
 odoo:
   postgresql:
     enabled: false
