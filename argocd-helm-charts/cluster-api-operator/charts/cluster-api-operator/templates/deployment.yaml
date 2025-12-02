@@ -68,9 +68,6 @@ spec:
         {{- if .Values.diagnosticsAddress }}
         - --diagnostics-address={{ .Values.diagnosticsAddress }}
         {{- end }}
-        {{- if .Values.insecureDiagnostics }}
-        - --insecure-diagnostics={{ .Values.insecureDiagnostics }}
-        {{- end }}
         {{- if .Values.watchConfigSecret }}
         - --watch-configsecret
         {{- end }}
