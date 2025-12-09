@@ -1,10 +1,10 @@
-{{- if .Values.redisCluster.enabled }}
+{{- if and .Values.redis.enabled (eq .Values.redis.mode "cluster") }}
 apiVersion: redis.redis.opstreelabs.in/v1beta2
 kind: RedisCluster
 metadata:
-  name: {{ .Release.Name }}-{{ .Values.redisCluster.name }}
+  name: {{ .Values.redis.name | default (printf "%s-redis" .Release.Name) }}
 spec:
-  clusterSize: {{ .Values.redisCluster.replicas }}
+  clusterSize: {{ .Values.redis.replicas | default 3 }}
   clusterVersion: v7
   persistenceEnabled: true
   podSecurityContext:
@@ -32,16 +32,15 @@ spec:
   storage:
     volumeClaimTemplate:
       spec:
-        # storageClassName: standard
         accessModes: ["ReadWriteOnce"]
         resources:
           requests:
-            storage: {{ .Values.redisCluster.storage }}
+            storage: {{ .Values.redis.storage | default "2Gi" }}
     nodeConfVolume: true
     nodeConfVolumeClaimTemplate:
       spec:
         accessModes: ["ReadWriteOnce"]
         resources:
           requests:
-            storage: {{ .Values.redisCluster.storage }}
+            storage: {{ .Values.redis.storage | default "2Gi" }}
 {{- end }}

@@ -2,10 +2,124 @@
 
 All releases and the changes included in them (pulled from git commits added since last release) will be detailed in this file.
 
+## KubeAid Release Version 21.0.0
+
+### Major Version Upgrades
+- 44217e3b3 Updated argocd-image-updater from version 1.0.1 to 1.0.1
+- 44217e3b3 Updated erpnext from version 8.0.0 to 8.0.0
+- 44217e3b3 Updated matomo from version 11.0.0 to 11.0.0
+
+### Minor Version Upgrades
+- 44217e3b3 Updated argo-cd from version 9.1.6 to 9.1.6
+- 44217e3b3 Updated aws-ebs-csi-driver from version 2.53.0 to 2.53.0
+- 44217e3b3 Updated hcloud-cloud-controller-manager from version 1.28.0 to 1.28.0
+- 44217e3b3 Updated cluster-autoscaler from version 9.53.0 to 9.53.0
+- 44217e3b3 Updated crossplane from version 2.1.3 to 2.1.3
+- 44217e3b3 Updated gatekeeper from version 3.21.0 to 3.21.0
+- 44217e3b3 Updated gitlab-runner from version 0.83.3 to 0.83.3
+- 44217e3b3 Updated grafana-operator from version v5.20.0 to v5.20.0
+- 44217e3b3 Updated haproxy from version 1.27.0 to 1.27.0
+- 44217e3b3 Updated kubernetes-dashboard from version 7.14.0 to 7.14.0
+- 44217e3b3 Updated kyverno from version 3.6.1 to 3.6.1
+- 44217e3b3 Updated localpv-provisioner from version 4.5.0-develop to 4.5.0-develop
+- 44217e3b3 Updated opentelemetry-operator from version 0.99.2 to 0.99.2
+- 44217e3b3 Updated opentelemetry-collector from version 0.140.1 to 0.140.1
+- 44217e3b3 Updated redis-operator from version 0.22.2 to 0.22.2
+- 44217e3b3 Updated snapshot-controller from version 4.2.0 to 4.2.0
+- 44217e3b3 Updated step-certificates from version 1.29.0 to 1.29.0
+- 44217e3b3 Updated strimzi-kafka-operator from version 0.49.1 to 0.49.1
+- 44217e3b3 Updated teleport-cluster from version 18.5.0 to 18.5.0
+- 44217e3b3 Updated teleport-kube-agent from version 18.5.0 to 18.5.0
+- 44217e3b3 Updated traefik from version 37.4.0 to 37.4.0
+- 44217e3b3 Updated velero from version 11.2.0 to 11.2.0
+- 44217e3b3 Updated zfs-localpv from version 2.9.0 to 2.9.0
+
+### Patch Version Upgrades
+- 44217e3b3 Updated aws-efs-csi-driver from version 3.2.6 to 3.2.6
+- 44217e3b3 Updated azuredisk-csi-driver from version 1.33.7 to 1.33.7
+- 44217e3b3 Updated cloud-provider-azure from version 1.34.2 to 1.34.2
+- 44217e3b3 Updated cilium from version 1.18.4 to 1.18.4
+- 44217e3b3 Updated cluster-api-operator from version 0.24.1 to 0.24.1
+- 44217e3b3 Updated graylog from version 3.0.8 to 3.0.8
+- 44217e3b3 Updated hcloud-csi from version 2.18.3 to 2.18.3
+- 44217e3b3 Updated keda from version 2.18.1 to 2.18.1
+- 44217e3b3 Updated keycloakx from version 7.1.5 to 7.1.5
+- 44217e3b3 Updated loki-stack from version 2.10.3 to 2.10.3
+- 44217e3b3 Updated mariadb-operator from version 25.10.2 to 25.10.2
+- 44217e3b3 Updated mattermost-team-edition from version 6.6.88 to 6.6.88
+- 44217e3b3 Updated metal3 from version 0.12.9 to 0.12.9
+- 44217e3b3 Updated kubernetes-operator from version 0.1.15 to 0.1.15
+- 44217e3b3 Updated opencost from version 2.4.1 to 2.4.1
+- 44217e3b3 Updated opensearch from version 3.3.2 to 3.3.2
+- 44217e3b3 Updated reloader from version 2.2.5 to 2.2.5
+- 44217e3b3 Updated rook-ceph from version v1.18.4 to v1.18.8
+- 44217e3b3 Updated rook-ceph-cluster from version v1.18.8 to v1.18.8
+- 44217e3b3 Updated sealed-secrets from version 2.17.9 to 2.17.9
+- 44217e3b3 Updated seaweedfs from version 4.0.401 to 4.0.401
+- 44217e3b3 Updated step-issuer from version 1.9.11 to 1.9.11
+- 44217e3b3 Updated autocert from version 1.20.5 to 1.20.5
+- 44217e3b3 Updated tigera-operator from version v3.31.2 to v3.31.2
+
+### Features
+- 633f904c2 feat: add changelog and release not via git commit in release script
+- 52085f5ab feat: add changelog.md changes via git commit in release script
+- eea77b0e1 feat: removed commented lines in the release script
+- 1ef621001 feat: script fix
+- fc5649134 feat: the helm repo update script is much faster on re-run and removed old function with better handling and go-release can read the commit and add it in release notes as well.
+- cf6f9182f feat: added gorelease setup
+
+### Bug Fixes
+- f9af16217 fix: changelog and gorelease config and workflow fix: removed release section from gorelease, since we have our own release note feat: added CI to run on schedule on Sunday
+- 2be7ad6d9 fix(cert-manager): remove cached readme.md file
+- 346d91596 fix: add the version file in git, so it can be tracked
+- 1965b5318 fix: the helm repo update script to get correct version
+- b5b74a01f fix: removed unwanted git-push workflow
+
+### Configuration Changes
+- bcacb5320 chore(doc): changelog removed, which was added by the script while testing
+- 44217e3b3 chore: update helm charts to v21.0.0
+- d47555a7e chore(ci): removed some obsolete workflow and fixed some
+- 9be977f0c chore: added a echo statement for jsonnetfmt ci check script, to know that it worked fine
+- a364b9eef chore: helm-diff, we cant compare with kubeaid-config directly from here
+- 0eba80fd0 chore: delete old .gitlab-ci
+- acf987300 chore: we never want to uninstall the argocd
+- 30c2e6205 chore: deleted generate-puppet-hiera.sh since its not used anymore
+- 3b35e8e0c chore: static script for internal usecase
+
+## 20.1.2
+### Features
+- [`4e23594a81ea25d125ac0cd56ebee84f17998b7e`](../../commit/4e23594a81ea25d125ac0cd56ebee84f17998b7e) Add support for adding extra ports
+- [`95222a31d6d5814b5603c8e8bff802fd8bed1c36`](../../commit/95222a31d6d5814b5603c8e8bff802fd8bed1c36) feat: Add Mastodon Helm chart
+- [`a171cd469544fffe023e880ee7c733cc631a89f1`](../../commit/a171cd469544fffe023e880ee7c733cc631a89f1) feat: g10k puppet/openvox code support added
+- [`285bdc712fb6bccc1b002566c1f4eab9d7204ac8`](../../commit/285bdc712fb6bccc1b002566c1f4eab9d7204ac8) feat: g10k hiera support
+- [`65da6ad7b2a53b882ed1485561f6d734006da7c4`](../../commit/65da6ad7b2a53b882ed1485561f6d734006da7c4) Add standalone Redis support for Mastodon
+- [`3f1c05353346f323b8cc0be1640f41314406d616`](../../commit/3f1c05353346f323b8cc0be1640f41314406d616) implemeted redis-mode
+- [`362ed16db29f225673534e218e024c76054c9be6`](../../commit/362ed16db29f225673534e218e024c76054c9be6) mastodon: Consolidate Redis config with mode option
+- [`8b006109f8148174aed509d6cd5a28b9d20b071c`](../../commit/8b006109f8148174aed509d6cd5a28b9d20b071c) Support CAPI clusters with different folder and cluster names
+
+### Fixes
+- [`174588109c4fcaae893e08720efd132b3dda70ef`](../../commit/174588109c4fcaae893e08720efd132b3dda70ef) Add: out of shared memory case
+- [`caa524960d4aa06721dd883a2c8e6895c7028403`](../../commit/caa524960d4aa06721dd883a2c8e6895c7028403) fix(keycloakx): creating ObjectStore and BackupSchedule resources only when backups are enabled
+- [`85bece48c8f1ab09a8b18bb7e051046f460bc6a8`](../../commit/85bece48c8f1ab09a8b18bb7e051046f460bc6a8) fix: Hardcoded AWS_ACCESS_KEY_ID  and mount from Kubernetes Secret
+- [`dfbea0aaab6541e3499eea4e8a1c021df1c56450`](../../commit/dfbea0aaab6541e3499eea4e8a1c021df1c56450) fix(rook-ceph): remove null cpu limits from resource configurations to comply with Kubernetes standards
+- [`d6ef0fc4658164583fe439d3e3cb660d73a8ae76`](../../commit/d6ef0fc4658164583fe439d3e3cb660d73a8ae76) fix: yamllint
+- [`497845b9d18fbffe7856b4a9ca987fb15815383c`](../../commit/497845b9d18fbffe7856b4a9ca987fb15815383c) fix: identation issue for code setup in openvox/g10k
+- [`84901d64a7b72f39a53e4c7ebe0dd14629380ebe`](../../commit/84901d64a7b72f39a53e4c7ebe0dd14629380ebe) fix: removed the https setup in g10k, since it does not support netrc
+- [`5d7708e0b0c22574f9cc1827d34c3a80f306e564`](../../commit/5d7708e0b0c22574f9cc1827d34c3a80f306e564) fix: dont add r10k configmap and secret, if r10k is disabled
+- [`633f4bb370bf5f2a78a2cf08dfac519b4ccc07aa`](../../commit/633f4bb370bf5f2a78a2cf08dfac519b4ccc07aa) Remove legacy redisCluster section from Mastodon - not needed here
+
+### Docs
+- [`9961e7bcd1fd267a1855109b8eaaa56736fb391e`](../../commit/9961e7bcd1fd267a1855109b8eaaa56736fb391e) feat: add certificate issuer configuration documentation and example templates for cert-manager
+- [`b9cc8928a6d891b934c1742efbe9ffcbea670a9d`](../../commit/b9cc8928a6d891b934c1742efbe9ffcbea670a9d) Added docs for rebooting a kubernetes node
+- [`86c67bca9f3e6e1547e54c1a7be66ca8ada45852`](../../commit/86c67bca9f3e6e1547e54c1a7be66ca8ada45852) Improved guide of redis-operator helm chart
+- [`8c33bf5b15ce0f9b4b90e295abf8f8509325ad7e`](../../commit/8c33bf5b15ce0f9b4b90e295abf8f8509325ad7e) feat: unbound var resolved and improved docs
+- [`1198f6e77116767c62d7cd7be0f6c4112ae8e9b0`](../../commit/1198f6e77116767c62d7cd7be0f6c4112ae8e9b0) WIP: improving argocd keycloak docs..
+- [`638bb44ebb672e19ea7acd7472779d7258a8aa58`](../../commit/638bb44ebb672e19ea7acd7472779d7258a8aa58) add note  on kubeaid-argocd-apps.sh script usage
+
 ## 20.1.1
 ### Fixes
 - [`fa2628f34235afc67392f8b9d0a5ca11462d7a76`](../../commit/fa2628f34235afc67392f8b9d0a5ca11462d7a76) fix(capi-cluster/hetzner): disabling Hetzner network for HCloud servers | upgrading ClusterAPI component versions
-- [`60e412b6fe0bc767484cffe95d6dd56d2863b60b`](../../commit/60e412b6fe0bc767484cffe95d6dd56d2863b60b) fix(capi-cluster/hetzner): Cilium installation command in postKubeadm section 
+- [`60e412b6fe0bc767484cffe95d6dd56d2863b60b`](../../commit/60e412b6fe0bc767484cffe95d6dd56d2863b60b) fix(capi-cluster/hetzner): Cilium installation command in postKubeadm section
 
 ## 20.1.0
 ### Minor Version Upgrades
